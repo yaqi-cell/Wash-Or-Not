@@ -1,0 +1,5 @@
+{
+  "name": "Laundry Weather Advisor",
+  "description": "An app that checks the 7-day weather forecast and advises if tomorrow is a good day to do laundry, complete with a voice reminder.",
+  "requestFramePermissions": ["geolocation"]
+}
