@@ -129,8 +129,8 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               className="bg-white rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden"
             >
-              <div className="p-8 md:p-10">
-                <div className="flex items-center justify-between mb-8">
+              <div className="p-5 md:p-7">
+                <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2 bg-gray-100 border-2 border-black px-3 py-1.5 rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                     <MapPin className="w-4 h-4 text-black" strokeWidth={2.5} />
                     <span className="text-xs font-black tracking-wider uppercase text-black">{locationName}</span>
@@ -144,11 +144,11 @@ function App() {
                   </div>
                 </div>
 
-                <h2 className="text-5xl md:text-6xl font-black text-black mb-8 leading-tight tracking-tighter">
+                <h2 className="text-4xl md:text-5xl font-black text-black mb-4 leading-tight tracking-tighter">
                   {advice?.action}
                 </h2>
                 
-                <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="grid grid-cols-2 gap-3 mb-4">
                   <div className="rounded-2xl p-4 border-4 border-black bg-[#4ECDC4] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-1 hover:rotate-0 transition-transform">
                     <div className="text-black text-[11px] mb-1 uppercase tracking-widest font-black">明日天气</div>
                     <div className="text-black font-black text-lg">{advice?.tomorrowWeather}</div>
@@ -159,7 +159,7 @@ function App() {
                   </div>
                 </div>
                 
-                <div className="space-y-4 mb-8 bg-white border-4 border-black rounded-2xl p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <div className="space-y-2 mb-4 bg-white border-4 border-black rounded-2xl p-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                   {advice?.tips.map((tip, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <span className="text-xl leading-none shrink-0 mt-0.5">👉</span>
@@ -168,12 +168,12 @@ function App() {
                   ))}
                 </div>
 
-                <div className="bg-[#FF9F1C] rounded-2xl p-5 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-black mb-8">
+                <div className="bg-[#FF9F1C] rounded-2xl p-3 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-black mb-4">
                   <h3 className="text-[11px] font-black uppercase tracking-widest mb-2">未来七天概览 📅</h3>
                   <p className="font-bold text-sm leading-relaxed">{advice?.forecastSummary}</p>
                   
                   {advice?.chartData && advice.chartData.length > 0 && (
-                    <div className="h-56 w-full bg-white border-4 border-black rounded-xl p-2 mt-4">
+                    <div className="h-40 w-full bg-white border-4 border-black rounded-xl p-2 mt-3">
                       <ResponsiveContainer width="100%" height="100%">
                         <LineChart data={advice.chartData} margin={{ top: 10, right: 10, left: -10, bottom: 20 }}>
                           <CartesianGrid strokeDasharray="3 3" stroke="#000" vertical={false} />
