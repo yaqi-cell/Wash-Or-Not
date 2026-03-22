@@ -32,8 +32,18 @@ function App() {
       
     } catch (error) {
       console.error(error);
-      const msg = error instanceof Error ? error.message : String(error);
-      alert(`获取信息失败：${msg}`);
+      let msg: string;
+      if (error instanceof GeolocationPositionError) {
+        const reasons: Record<number, string> = {
+          1: '位置权限被拒绝，请在系统设置中允许浏览器访问位置。',
+          2: '无法获取位置信息，请检查设备定位是否已开启。',
+          3: '获取位置超时，请检查网络后重试。',
+        };
+        msg = reasons[error.code] ?? `定位失败（code ${error.code}）`;
+      } else {
+        msg = error instanceof Error ? error.message : String(error);
+      }
+      alert(msg);
     } finally {
       setLoading(false);
       setLoadingStep('');
