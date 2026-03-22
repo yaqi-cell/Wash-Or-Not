@@ -32,7 +32,8 @@ function App() {
       
     } catch (error) {
       console.error(error);
-      alert('获取信息失败，请确保授予了位置权限并重试。');
+      const msg = error instanceof Error ? error.message : String(error);
+      alert(`获取信息失败：${msg}`);
     } finally {
       setLoading(false);
       setLoadingStep('');
